@@ -6,14 +6,6 @@ import (
 	"time"
 )
 
-var links = []string{
-	"http://google.com",
-	"http://facebook.com",
-	"http://stackoverflow.com",
-	"http://golang.org",
-	"http://amazon.com",
-}
-
 func checkLink(link string, c chan string) {
 	_, err := http.Get(link)
 	if err != nil {
@@ -26,7 +18,7 @@ func checkLink(link string, c chan string) {
 	c <- link
 }
 
-func checkMultipleLinks() {
+func checkMultipleLinks(links []string) {
 	c := make(chan string)
 
 	for _, link := range links {
