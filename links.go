@@ -27,9 +27,9 @@ func checkMultipleLinks(links []string) {
 
 	// we wait for the goroutines to finish
 	for l := range c {
-		go func(link string) {
+		go func(link string) { // we use a parameter to avoid calling a variable that is outside the scope of the goroutine
 			time.Sleep(5 * time.Second) // we wait 5 seconds before checking the link again so that we don't spam the server
 			checkLink(link, c)
-		}(l)
+		}(l) // we call the goroutine with l as link
 	}
 }
