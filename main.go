@@ -8,6 +8,7 @@ func main() {
 		"http://stackoverflow.com",
 		"http://golang.org",
 		"http://amazon.com",
+		"http://millmountaindigital.com",
 	}
 
 	checkMultipleLinks(links)
